@@ -70,11 +70,19 @@ const handleSubmit= ()=>{
 
 
 //Q4. Create a promise. Have it resolved with a value of 'Resolved!' in resolve after a delay of 1000ms. Print the contents of the promise after the promise has been resolved.
-function CreatedPromise(){
-Promise.resolve(
-    setTimeout(() => {
-        console.log("Resolved!");
-    }, 1000));
+async function CreatedPromise() {
+
+    const myPromise = new Promise((resolve) => {
+
+        setTimeout(() => {
+            resolve("Resolved!");
+        }, 1000);
+
+    });
+
+    const result = await myPromise;
+
+    console.log(result);
 }
 
 
